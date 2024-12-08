@@ -4,4 +4,4 @@
 
 ## milvus
 
-[Milvus invalid dim 错误的具体含义](milvus/milvus-invalid-dim.md) - 2024-12-08
+- [Milvus invalid dim 错误的具体含义](milvus/milvus-invalid-dim.md) - 2024-12-08
