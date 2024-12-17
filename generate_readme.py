@@ -32,7 +32,7 @@ def generate_readme(base_dir):
     
     # Sort topics alphabetically
     for topic, articles in sorted(topics.items()):
-        readme_content += f"## {topic.capitalize()}\n\n"
+        readme_content += f"## {topic}\n\n"
         for article_title, article_path in sorted(articles):
             readme_content += f"- [{article_title}]({article_path})\n"
         readme_content += "\n"
