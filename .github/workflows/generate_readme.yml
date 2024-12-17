@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install markdown beautifulsoup4  # Install dependencies required for the script
+        pip install markdown beautifulsoup4 pytz # Install dependencies required for the script
 
     - name: Run Python script to generate README
       run: |
