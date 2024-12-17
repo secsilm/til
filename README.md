@@ -1,9 +1,7 @@
 # Today I Learned
 
-some text...
+记录日常遇到的不足以形成一篇完整博文的小问题、小技术点，inspired by [simonw/til](https://github.com/simonw/til) 。
 
-## .git
-## .github
 ## docker
 - [获取正在运行的 container 的 compose 文件路径](docker/get-compose-file-path-from-running-container.md) - 2024-12-17
 ## milvus
