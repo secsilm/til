@@ -53,7 +53,6 @@ def generate_readme(base_dir='.', output_file='README.md'):
         for md_file in markdown_files:
             title = extract_title(md_file)
             article_date = get_commit_date(md_file)
-            print(md_file, title, article_date)
             markdown_with_dates.append((md_file, title, article_date))
         
         # Sort files by commit date (most recent first)
