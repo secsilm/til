@@ -8,12 +8,13 @@ def get_commit_date(file_path):
     """Get the commit date for a file using git log and convert to Beijing time (GMT+8)."""
     try:
         result = subprocess.run(
-            ['git', 'log', '-1', '--format=%cd', file_path],
+            ['git', 'log', '-1', '--format=%cd', '--date=iso', file_path],
             capture_output=True, text=True, check=True
         )
-        # Parse the commit date (in UTC by default)
+        # Parse the commit date (ISO 8601 format, e.g. 2024-12-17T10:30:00+08:00)
         commit_date_str = result.stdout.strip()
-        commit_date = datetime.strptime(commit_date_str, '%a %b %d %H:%M:%S %Y %z')
+        print(f"{commit_date_str=}")
+        commit_date = datetime.fromisoformat(commit_date_str)
         
         # Convert the date to Beijing time (GMT+8)
         beijing_tz = pytz.timezone('Asia/Shanghai')
@@ -37,9 +38,9 @@ def extract_title(markdown_file_path):
 def generate_readme(base_dir='.', output_file='README.md'):
     """Generate the README.md file with a list of articles, including their dates."""
     # Create a list of topics (directories)
-    topics = sorted([d for d in Path(base_dir).iterdir() if d.is_dir()])
+    topics = sorted([d for d in Path(base_dir).iterdir() if d.is_dir() and not d.name.startswith('.')])
     
-    readme_content = "# Today I Learned\n\nsome text...\n\n"
+    readme_content = "# Today I Learned\n\n记录日常遇到的不足以形成一篇完整博文的小问题、小技术点，inspired by [simonw/til](https://github.com/simonw/til) 。\n\n"
     
     for topic in topics:
         readme_content += f"## {topic.name}\n"
@@ -52,6 +53,7 @@ def generate_readme(base_dir='.', output_file='README.md'):
         for md_file in markdown_files:
             title = extract_title(md_file)
             article_date = get_commit_date(md_file)
+            print(md_file, title, article_date)
             markdown_with_dates.append((md_file, title, article_date))
         
         # Sort files by commit date (most recent first)
