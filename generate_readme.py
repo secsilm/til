@@ -14,7 +14,7 @@ def get_commit_date(file_path):
         # Parse the commit date (ISO 8601 format, e.g. 2024-12-17T10:30:00+08:00)
         commit_date_str = result.stdout.strip()
         print(f"{commit_date_str=}")
-        commit_date = datetime.fromisoformat(commit_date_str)
+        commit_date = datetime.strptime(commit_date_str, '%Y-%m-%d %H:%M:%S %z')
         
         # Convert the date to Beijing time (GMT+8)
         beijing_tz = pytz.timezone('Asia/Shanghai')
