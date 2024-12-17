@@ -42,7 +42,7 @@ def generate_readme(base_dir='.', output_file='README.md'):
     n_topics = len(topics)
     n_tils = 0
     
-    readme_content = "# Today I Learned\n\n记录日常遇到的不足以形成一篇完整博文的小问题、小技术点，inspired by [simonw/til](https://github.com/simonw/til) 。\n\n目前有 {n_tils} 篇 TIL，涵盖 {n_topics} 个 topic。"
+    readme_content = "# Today I Learned\n\n记录日常遇到的不足以形成一篇完整博文的小问题、小技术点，inspired by [simonw/til](https://github.com/simonw/til) 。\n\n目前有 {n_tils} 篇 TIL，涵盖 {n_topics} 个 topic。\n\n"
     
     for topic in topics:
         readme_content += f"## {topic.name}\n"
