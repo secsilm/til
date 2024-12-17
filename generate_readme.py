@@ -39,14 +39,17 @@ def generate_readme(base_dir='.', output_file='README.md'):
     """Generate the README.md file with a list of articles, including their dates."""
     # Create a list of topics (directories)
     topics = sorted([d for d in Path(base_dir).iterdir() if d.is_dir() and not d.name.startswith('.')])
+    n_topics = len(topics)
+    n_tils = 0
     
-    readme_content = "# Today I Learned\n\n记录日常遇到的不足以形成一篇完整博文的小问题、小技术点，inspired by [simonw/til](https://github.com/simonw/til) 。\n\n"
+    readme_content = "# Today I Learned\n\n记录日常遇到的不足以形成一篇完整博文的小问题、小技术点，inspired by [simonw/til](https://github.com/simonw/til) 。\n\n目前有 {n_tils} 篇 TIL，涵盖 {n_topics} 个 topic。"
     
     for topic in topics:
         readme_content += f"## {topic.name}\n"
         
         # List all markdown files in the topic directory
         markdown_files = [f for f in topic.glob('*.md')]
+        n_tils += len(markdown_files)
         
         # Get commit date for each markdown file
         markdown_with_dates = []
@@ -65,6 +68,8 @@ def generate_readme(base_dir='.', output_file='README.md'):
                 readme_content += f"- [{title}]({md_file.relative_to(base_dir)}) - {formatted_date}\n"
             else:
                 readme_content += f"- [{title}]({md_file.relative_to(base_dir)})\n"
+
+    readme_content = readme_content.format(n_tils=n_tils, n_topics=n_topics)
     
     # Write the content to the README.md
     with open(output_file, 'w', encoding='utf-8') as readme_file:
