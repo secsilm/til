@@ -11,6 +11,8 @@ on:
 jobs:
   generate-readme:
     runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+    permissions:
+      contents: write  # Allow the GitHub Action to push changes to the repository
 
     steps:
     - name: Checkout code
