@@ -6,7 +6,7 @@ import pytz
 
 def get_commit_date(file_path):
     """Get the commit date for a file using git log and convert to Beijing time (GMT+8)."""
-    file_path = str(file_path)
+    file_path = file_path.resolve()
     try:
         result = subprocess.run(
             ['git', 'log', '-1', '--format=%cd', '--date=iso', '--', file_path],  # Add '--' to specify the file
