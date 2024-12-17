@@ -6,12 +6,13 @@ import pytz
 
 def get_commit_date(file_path):
     """Get the commit date for a file using git log and convert to Beijing time (GMT+8)."""
+    file_path = str(file_path)
     try:
         result = subprocess.run(
-            ['git', 'log', '-1', '--format=%cd', '--date=iso', '--', str(file_path)],  # Add '--' to specify the file
+            ['git', 'log', '-1', '--format=%cd', '--date=iso', '--', file_path],  # Add '--' to specify the file
             capture_output=True, text=True, check=True
         )
-        print(f"Git log output for {file_path:!r}: {result.stdout.strip()}")
+        print(f"Git log output for {file_path!r}: {result.stdout.strip()}")
         # Check if we got an output
         if not result.stdout.strip():
             raise ValueError(f"No commit found for file: {file_path}")
