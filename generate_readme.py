@@ -11,6 +11,10 @@ def get_commit_date(file_path):
             ['git', 'log', '-1', '--format=%cd', '--date=iso', '--', str(file_path)],  # Add '--' to specify the file
             capture_output=True, text=True, check=True
         )
+        print(f"Git log output for {file_path:!r}: {result.stdout.strip()}")
+        # Check if we got an output
+        if not result.stdout.strip():
+            raise ValueError(f"No commit found for file: {file_path}")
         # Parse the commit date (ISO 8601 format, e.g. 2024-12-17T10:30:00+08:00)
         commit_date_str = result.stdout.strip()
         print(f"{commit_date_str=}")
