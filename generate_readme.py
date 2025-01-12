@@ -7,6 +7,7 @@ import pytz
 def get_commit_date(file_path):
     """Get the commit date for a file using git log and convert to Beijing time (GMT+8)."""
     try:
+        # the most recent commit date
         result = subprocess.run(
             ['git', 'log', '-1', '--format=%cd', '--date=iso', '--', file_path],  # Add '--' to specify the file
             capture_output=True, text=True, check=True
@@ -18,11 +19,25 @@ def get_commit_date(file_path):
         
         # Convert the date to Beijing time (GMT+8)
         beijing_tz = pytz.timezone('Asia/Shanghai')
-        commit_date = commit_date.astimezone(beijing_tz).date()
+        most_recent_commit_date = commit_date.astimezone(beijing_tz).date()
+
+        # the first commit date
+        result = subprocess.run(
+            ['git', 'log', '--diff-filter=A', '--format=%cd', '--date=iso', '--', file_path],  # Add '--' to specify the file
+            capture_output=True, text=True, check=True
+        )
+
+        # Parse the commit date (ISO 8601 format, e.g. 2024-12-17T10:30:00+08:00)
+        commit_date_str = result.stdout.strip()
+        commit_date = datetime.strptime(commit_date_str, '%Y-%m-%d %H:%M:%S %z')
         
-        return commit_date
+        # Convert the date to Beijing time (GMT+8)
+        beijing_tz = pytz.timezone('Asia/Shanghai')
+        first_commit_date = commit_date.astimezone(beijing_tz).date()
+        
+        return first_commit_date, most_recent_commit_date
     except subprocess.CalledProcessError:
-        return None
+        return None, None
 
 def extract_title(markdown_file_path):
     """Extract the title (from the first header) of the markdown file."""
@@ -55,17 +70,17 @@ def generate_readme(base_dir='.', output_file='README.md'):
         markdown_with_dates = []
         for md_file in markdown_files:
             title = extract_title(md_file)
-            article_date = get_commit_date(md_file)
-            markdown_with_dates.append((md_file, title, article_date))
+            first_commit_date, most_recent_commit_date = get_commit_date(md_file)
+            markdown_with_dates.append((md_file, title, first_commit_date, most_recent_commit_date))
         
         # Sort files by commit date (most recent first)
-        markdown_with_dates.sort(key=lambda x: x[2], reverse=True)
+        markdown_with_dates.sort(key=lambda x: x[3], reverse=True)
         
-        for md_file, title, article_date in markdown_with_dates:
+        for md_file, title, create_time, update_time in markdown_with_dates:
             # Format the article entry with title and date
             if article_date:
                 formatted_date = article_date.strftime('%Y-%m-%d')
-                readme_content += f"- [{title}]({md_file.relative_to(base_dir)}) - {formatted_date}\n"
+                readme_content += f"- [{title}]({md_file.relative_to(base_dir)}) - 更新于 {update_time}，创建于 {create_time}\n"
             else:
                 readme_content += f"- [{title}]({md_file.relative_to(base_dir)})\n"
 
