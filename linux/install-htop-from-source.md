@@ -25,3 +25,18 @@ sudo make install
 注意这里默认安装到 `/usr/local/bin`，而 apt 安装的一般在 `/usr/bin`。
 
 编译安装后执行 `htop` 时，如果发现命令找不到，那么将 `export PATH="/usr/local/bin:$PATH"` 添加到 `~/.bashrc` 的底部，然后执行 `source ~/.bashrc` 即可。
+
+## I/O tab
+
+`3.3.0` 版本是支持监控磁盘读写相关性能的，就像这样：
+
+<img width="1347" alt="image" src="https://github.com/user-attachments/assets/d2af0d33-42ea-4ef6-9818-444deeba54be" />
+
+但是如果你安装完发现没有，还是和之前一样，那么你可以在设置中打开：
+
+1. 按 <kbd>F2</kbd> 进入设置。
+2. 选中 `Show tabs for screens`。
+3. <kbd>F10</kbd> 保存退出。
+
+<img width="771" alt="image" src="https://github.com/user-attachments/assets/f47dfa8d-e4f5-4cb4-9e00-a833b210b262" />
+
