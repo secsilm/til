@@ -79,7 +79,8 @@ def generate_readme(base_dir='.', output_file='README.md'):
         for md_file, title, create_time, update_time in markdown_with_dates:
             # Format the article entry with title and date
             if create_time:
-                formatted_date = article_date.strftime('%Y-%m-%d')
+                create_time = create_time.strftime('%Y-%m-%d')
+                update_time = update_time.strftime('%Y-%m-%d')
                 readme_content += f"- [{title}]({md_file.relative_to(base_dir)}) - 更新于 {update_time}，创建于 {create_time}\n"
             else:
                 readme_content += f"- [{title}]({md_file.relative_to(base_dir)})\n"
