@@ -15,7 +15,7 @@ healthcheck:
 
 注意 `test` 命令是在**容器内**执行的。
 
-但是有时候容器正常启动了，但是仍然标识为 `unhealthy`。此时我们就想知道，`test` 命令的具体输出是什么。那么我们可以使用以下命令：
+但是有时候容器正常启动了，却仍然标识为 `unhealthy`。此时我们就想知道，`test` 命令的具体输出是什么。那么我们可以使用以下命令：
 
 ```bash
 docker inspect <container_id> --format='{{json .State.Health}}' | python -m json.tool
