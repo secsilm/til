@@ -4,7 +4,7 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 8 篇 TIL，涵盖 6 个 topic。
+目前有 9 篇 TIL，涵盖 6 个 topic。
 
 ## docker
 - [获取 docker 健康检查的日志](docker/get-healthcheck-log.md) - 2025-01-22
@@ -12,6 +12,7 @@
 ## git
 - [git clone 的 depth 与 commit 时间](git/git-clone-depth-and-commit-date.md) - 2024-12-17
 ## linux
+- [格式化硬盘为 exfat](linux/format-drive-exfat.md) - 2025-02-03
 - [源码编译安装 htop](linux/install-htop-from-source.md) - 2025-01-12，2025-01-06
 ## milvus
 - [Milvus invalid dim 错误的具体含义](milvus/milvus-invalid-dim.md) - 2024-12-08
