@@ -4,7 +4,7 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 12 篇 TIL，涵盖 6 个 topic。
+目前有 13 篇 TIL，涵盖 6 个 topic。
 
 ## docker
 - [获取 docker 健康检查的日志](docker/get-healthcheck-log.md) - 2025-01-22
@@ -18,6 +18,7 @@
 ## milvus
 - [Milvus invalid dim 错误的具体含义](milvus/milvus-invalid-dim.md) - 2024-12-08
 ## python
+- [pandas `resample()` 会自动添加缺失的 freq](python/pandas-resample-auto-add-missing-freq.md) - 2025-03-31
 - [concurrent 中的 `map` 与 `submit`](python/concurrent-map-vs-submit.md) - 2025-02-22
 - [finally 在 continue 后仍会执行](python/try-continu-finally.md) - 2025-02-20
 - [在 dataclass 中设置 mutable 类型的默认值](python/dataclass-mutable-default-value.md) - 2025-01-06
