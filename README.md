@@ -4,7 +4,7 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 15 篇 TIL，涵盖 7 个 topic。
+目前有 16 篇 TIL，涵盖 7 个 topic。
 
 ## docker
 - [获取 docker 健康检查的日志](docker/get-healthcheck-log.md) - 2025-01-22
@@ -20,6 +20,7 @@
 ## mysql
 - [MySQL 自动回收旧连接和 pre ping](mysql/recycle-and-pre-ping.md) - 2025-05-14
 ## python
+- [uv 安装私有 devpi 上的 package](python/uv-devpi.md) - 2025-05-28
 - [pandas 中的时区转换](python/pandas-timezone-conversion.md) - 2025-04-28
 - [pandas `resample()` 会自动添加缺失的 freq](python/pandas-resample-auto-add-missing-freq.md) - 2025-03-31
 - [concurrent 中的 `map` 与 `submit`](python/concurrent-map-vs-submit.md) - 2025-02-22
