@@ -2,7 +2,7 @@
 
 之前一直不太确定 langfuse 在获取 prompt 失败时会如何表现，直接报错还是使用之前缓存的结果（尽管该缓存已过期）。今天做了个实验，终于明白了，是会使用之前缓存的结果的。
 
-我们可以使用如下程序 `langfuse_test.py`，该程序会缓存 120 秒获取到的 prompt：
+我们可以使用如下程序 `langfuse_test.py` 进行测试，该程序会缓存 120 秒获取到的 prompt：
 
 ```python
 from config import langfuse
