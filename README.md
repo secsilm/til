@@ -22,7 +22,7 @@
 ## mysql
 - [MySQL 自动回收旧连接和 pre ping](mysql/recycle-and-pre-ping.md) - 2025-05-14
 ## python
-- [防止 Pandas 误识别 NA 值](python/prevent-na-values-in-pandas.md) - 2025-07-02
+- [防止 pandas 误识别 NA 值](python/prevent-na-values-in-pandas.md) - 2025-07-02
 - [uv 安装私有 devpi 上的 package](python/uv-devpi.md) - 2025-05-28
 - [pandas 中的时区转换](python/pandas-timezone-conversion.md) - 2025-04-28
 - [pandas `resample()` 会自动添加缺失的 freq](python/pandas-resample-auto-add-missing-freq.md) - 2025-03-31
