@@ -16,6 +16,13 @@ $ docker inspect {container_id} | grep com.docker.compose
                 "com.docker.compose.version": "2.21.0"
 ```
 
+也可以使用 `jq`：
+
+```
+$ docker inspect {container_id} | jq '.[0].Config.Labels."com.docker.compose.project.config_files"'
+"/some/path/docker-compose.yml"
+```
+
 ## References
 
 - [Get docker-compose.yml file location from running container? - Stack Overflow](https://stackoverflow.com/a/63788532)
