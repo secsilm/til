@@ -4,7 +4,7 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 19 篇 TIL，涵盖 8 个 topic。
+目前有 20 篇 TIL，涵盖 8 个 topic。
 
 ## docker
 - [获取正在运行的 container 的 compose 文件路径](docker/get-compose-file-path-from-running-container.md) - 2025-09-09，2024-12-16
@@ -23,6 +23,7 @@
 ## mysql
 - [MySQL 自动回收旧连接和 pre ping](mysql/recycle-and-pre-ping.md) - 2025-05-14
 ## python
+- [`nan` 比较与最大值陷阱](python/nan-comparison.md) - 2025-09-16
 - [防止 pandas 误识别 NA 值](python/prevent-na-values-in-pandas.md) - 2025-07-02
 - [uv 安装私有 devpi 上的 package](python/uv-devpi.md) - 2025-05-28
 - [pandas 中的时区转换](python/pandas-timezone-conversion.md) - 2025-04-28
