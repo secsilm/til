@@ -30,9 +30,9 @@
 
 涉及到 na 识别的参数有这么几个：
 
-- na_values：用于指定哪些是 na，默认就是上面列举的那几个。
-- keep_default_na：是否使用默认的 na values，默认 `True`。
-- na_filter：是否检测 na，默认 `True`。如果你确认文件里没有 na，那么你可以设为 `False` 来提升加载速度。
+- `na_values`：用于指定哪些是 na，默认就是上面列举的那几个。
+- `keep_default_na`：是否使用默认的 na values，默认 `True`。
+- `na_filter`：是否检测 na，默认 `True`。如果你确认文件里没有 na，那么你可以设为 `False` 来提升加载速度。
 
 文档上说可以结合使用 `dtype=str` 和 `na_values` 来避免误识别，比如指定 `na_values=['']`，但实际上不行，因为有如下的规则：
 
