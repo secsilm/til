@@ -7,8 +7,8 @@
 目前有 20 篇 TIL，涵盖 8 个 topic。
 
 ## docker
-- [获取正在运行的 container 的 compose 文件路径](docker/get-compose-file-path-from-running-container.md) - 2025-09-09，2024-12-16
 - [在没有 compose 文件的情况下 down 容器](docker/docker-down-containers-without-compose.md) - 2025-09-09
+- [获取正在运行的 container 的 compose 文件路径](docker/get-compose-file-path-from-running-container.md) - 2025-09-09，2024-12-16
 - [获取 docker 健康检查的日志](docker/get-healthcheck-log.md) - 2025-01-22
 ## git
 - [git clone 的 depth 与 commit 时间](git/git-clone-depth-and-commit-date.md) - 2024-12-17
@@ -23,7 +23,7 @@
 ## mysql
 - [MySQL 自动回收旧连接和 pre ping](mysql/recycle-and-pre-ping.md) - 2025-05-14
 ## python
-- [`nan` 比较与最大值陷阱](python/nan-comparison.md) - 2025-09-16
+- [`nan` 比较与最大值陷阱](python/nan-comparison.md) - 2025-11-21，2025-09-16
 - [防止 pandas 误识别 NA 值](python/prevent-na-values-in-pandas.md) - 2025-09-16，2025-07-02
 - [uv 安装私有 devpi 上的 package](python/uv-devpi.md) - 2025-05-28
 - [pandas 中的时区转换](python/pandas-timezone-conversion.md) - 2025-04-28
