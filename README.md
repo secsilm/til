@@ -13,7 +13,7 @@
 ## git
 - [git clone 的 depth 与 commit 时间](git/git-clone-depth-and-commit-date.md) - 2024-12-17
 ## linux
-- [cp 复制真实文件而不是 symbol link](linux/cp-symbol-link.md) - 2025-03-05
+- [cp 复制真实文件而不是 symbol link](linux/cp-symbol-link.md) - 2025-12-18，2025-03-05
 - [格式化硬盘为 exfat](linux/format-drive-exfat.md) - 2025-02-03
 - [源码编译安装 htop](linux/install-htop-from-source.md) - 2025-01-12，2025-01-06
 ## llm
