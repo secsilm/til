@@ -4,7 +4,7 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 21 篇 TIL，涵盖 9 个 topic。
+目前有 22 篇 TIL，涵盖 9 个 topic。
 
 ## docker
 - [在没有 compose 文件的情况下 down 容器](docker/docker-down-containers-without-compose.md) - 2025-09-09
@@ -25,6 +25,7 @@
 ## nicegui
 - [NiceGUI 报错 Invalid websocket upgrade](nicegui/invalid-websocket-upgrade.md) - 2025-12-10
 ## python
+- [使用 f-string 格式化日期时间](python/format-datetime-with-f-string.md) - 2025-12-18
 - [`nan` 比较与最大值陷阱](python/nan-comparison.md) - 2025-11-21，2025-09-16
 - [防止 pandas 误识别 NA 值](python/prevent-na-values-in-pandas.md) - 2025-09-16，2025-07-02
 - [uv 安装私有 devpi 上的 package](python/uv-devpi.md) - 2025-05-28
