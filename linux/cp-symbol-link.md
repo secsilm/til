@@ -36,7 +36,7 @@ lrwxrwxrwx 1 jy jy 52 2月  12 16:10 models--google--vit-base-patch16-224-in21k/
 我们可以使用 `cp -L`：
 
 ```
-$ cp -Lr b4569560a39a0f1af58e3ddaf17facf20ab919b0 new_model_dir`
+$ cp -Lr b4569560a39a0f1af58e3ddaf17facf20ab919b0 new_model_dir
 ```
 
 - `-L`: 全称是 `--dereference`，也就是解引用，会找到真实文件。
