@@ -8,11 +8,7 @@ pandas 于 2026-01-21 [发布了 3.0 版本](https://pandas.pydata.org/docs/what
 
 ## 全字符串列的 dtype 现在为 str
 
-之前这种列的类型为 `object`，实际上为 numpy 的 `object` 类型，一大好处是可以 hold 各种类型的 python 对象。现在纯 str 数据会被直接转为 [`pandas.StringDtype`](https://pandas.pydata.org/docs/reference/api/pandas.StringDtype.html#pandas.StringDtype) 类型，其他特殊类型（比如 list）仍然为 `object`。
-
-这种新类型现在会_优先_由 `pyarrow` 提供支持（更好的性能），但是由于 `pyarrow` 不是 pandas 的必选依赖，所以建议手动安装。
-
-在使用 `.select_dtypes` 时，可以传入 `str` 或者 `string`：`df.select_dtypes(include=['str'])`。
+之前这种列的类型为 `object`，实际上为 numpy 的 `object` 类型，一大好处是可以 hold 各种类型的 python 对象。现在纯 str 数据会被直接转为 [`pandas.StringDtype`](https://pandas.pydata.org/docs/reference/api/pandas.StringDtype.html#pandas.StringDtype) 类型，其他特殊类型（比如 list）仍然为 `object`：
 
 ```python
 In [23]: pd.Series(["a", "b"])
@@ -21,6 +17,10 @@ Out[23]:
 1    b
 dtype: str
 ```
+
+这种新类型现在会*优先*由 `pyarrow` 提供支持（更好的性能），但是由于 `pyarrow` 不是 pandas 的必选依赖，所以建议手动安装。
+
+在使用 `.select_dtypes` 时，可以传入 `str` 或者 `string`：`df.select_dtypes(include=['str'])`。
 
 ## str 列的缺失值永远为 `NaN`
 
