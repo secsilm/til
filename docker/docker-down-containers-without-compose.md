@@ -5,16 +5,17 @@
 此时我们可以这样做：
 
 1. 检查容器的重启策略：`docker inspect` 里存储了容器的基本信息，里面包含当前的重启策略，你可以直接搜索 `Restart` 查找，也可以结合 `jq` 来直接获取相关字段：
-
     ```
     $ docker inspect f05fc1ea209a | jq '.[0].HostConfig.RestartPolicy'
     {
       "Name": "always",
       "MaximumRetryCount": 0
     }
-    ```
-  可以看到目前的重启策略是 `always`，即容器会一直重启，除非你 down 掉。
+    ``` 
+   可以看到目前的重启策略是 `always`，即容器会一直重启，除非你 down 掉。
+  
 2. 更新容器的重启策略：`docker update --restart=no f05fc1ea209a`。
+
 3. 删除或停止容器：`docker rm/stop f05fc1ea209a`。
 
 这样容器就不会在下次开机时重启了。
