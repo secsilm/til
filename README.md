@@ -4,9 +4,10 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 25 篇 TIL，涵盖 9 个 topic。
+目前有 26 篇 TIL，涵盖 9 个 topic。
 
 ## docker
+- [如何让 Docker 容器后台运行并随时进入](docker/docker-run-detach-and-reattach.md) - 2026-04-02
 - [在没有 compose 文件的情况下 down 容器](docker/docker-down-containers-without-compose.md) - 2025-09-09
 - [获取正在运行的 container 的 compose 文件路径](docker/get-compose-file-path-from-running-container.md) - 2025-09-09，2024-12-16
 - [获取 docker 健康检查的日志](docker/get-healthcheck-log.md) - 2025-01-22
