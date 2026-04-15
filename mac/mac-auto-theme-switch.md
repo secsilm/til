@@ -97,7 +97,7 @@ exit 1
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/alan/scripts/time-scheduler.sh</string>
+        <string>/Users/你的用户名/scripts/time-scheduler.sh</string>
     </array>
 
     <!-- Run every 60 seconds -->
