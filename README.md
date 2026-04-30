@@ -4,7 +4,7 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 27 篇 TIL，涵盖 10 个 topic。
+目前有 28 篇 TIL，涵盖 11 个 topic。
 
 ## docker
 - [如何让 Docker 容器后台运行并随时进入](docker/docker-run-detach-and-reattach.md) - 2026-04-02
@@ -24,6 +24,8 @@
 - [Mac 定时切换主题](mac/mac-auto-theme-switch.md) - 2026-04-15
 ## milvus
 - [Milvus invalid dim 错误的具体含义](milvus/milvus-invalid-dim.md) - 2024-12-08
+## ml
+- [HuggingFace Transformers 加载模型时 CPU 内存的真实占用](ml/hf-load-model-memory.md) - 2026-04-30
 ## mysql
 - [MySQL 自动回收旧连接和 pre ping](mysql/recycle-and-pre-ping.md) - 2025-05-14
 ## nicegui
