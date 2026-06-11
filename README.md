@@ -4,7 +4,7 @@
 
 格式：标题 - 最后更新日期。如果该文章后期有更新，则第二个为创建日期。
 
-目前有 29 篇 TIL，涵盖 12 个 topic。
+目前有 30 篇 TIL，涵盖 12 个 topic。
 
 ## docker
 - [在没有 compose 文件的情况下 down 容器](docker/docker-down-containers-without-compose.md) - 2026-04-02，2025-09-09
@@ -27,6 +27,7 @@
 ## milvus
 - [Milvus invalid dim 错误的具体含义](milvus/milvus-invalid-dim.md) - 2024-12-08
 ## ml
+- [将 hf 模型复制到指定目录](ml/copy-hf-model-to-new-dir.md) - 2026-06-11
 - [HuggingFace Transformers 加载模型时 CPU 内存的真实占用](ml/hf-load-model-memory.md) - 2026-04-30
 ## mysql
 - [MySQL 自动回收旧连接和 pre ping](mysql/recycle-and-pre-ping.md) - 2025-05-14
