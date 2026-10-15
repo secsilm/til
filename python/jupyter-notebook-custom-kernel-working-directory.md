@@ -29,7 +29,7 @@
 
 今天看了 real python的 [Python Project Structure: How to Choose the Right Layout](https://realpython.com/python-application-layouts/)，借此机会，和 ChatGPT 再次讨论这一问题。经过[几轮的 back and forth](https://chatgpt.com/share/6ad06d37-fc48-83ea-9ada-3d74b56ffd68)，最终得到下面的解决方案，只需一次改动，无需在每次新建 notebook 时手动写代码：
 
-在 Jupyter Server 的配置文件 ~/.jupyter/jupyter_server_config.py 中添加：
+在 Jupyter Server 的配置文件 `~/.jupyter/jupyter_server_config.py` 中添加：
 
 ```python
 from pathlib import PurePosixPath
