@@ -37,20 +37,23 @@ from pathlib import PurePosixPath
 from jupyter_server.services.contents.filemanager import FileContentsManager
 
 
-class ProjectContentsManager(FileContentsManager):
-    def get_kernel_path(self, path, model=None):
+class ProjectContentsManager(AsyncLargeFileManager):
+    async def get_kernel_path(self, path, model=None):
         parts = PurePosixPath(path).parts
 
-        if "notebooks" in parts[:-1]:
+        if path.endswith(".ipynb") and "notebooks" in parts[:-1]:
             index = parts.index("notebooks")
-            return "/".join(parts[:index])
+            kernel_path = "/".join(parts[:index])
+            self.log.info("Kernel CWD: %s -> %s", path, kernel_path)
+            return kernel_path
 
-        return super().get_kernel_path(path, model)
-
+        return await super().get_kernel_path(path, model)
 
 c.ServerApp.contents_manager_class = ProjectContentsManager
 ```
 
-这样每次遇到 `notebooks/` 中的文件，都会自动将 cwd 改为上级目录，而且不影响不在 `notebooks/` 中的文件。唯一的要求就是在根目录创建 `notebooks/`，然后将所有的 nb 都放在这里。
+这样每次遇到 `notebooks/` 中的文件，都会自动将 cwd 改为 `notebooks/` 所在目录，即使 `notebooks/` 中有多层目录也没问题，而且不影响不在 `notebooks/` 中的文件。唯一的要求就是在根目录创建 `notebooks/`，然后将所有的 nb 都放在这里。
+
+需要注意的是，如果你打开一个旧的 nb，会自动复用旧的 kernel，即使你 restart 或者 shutdown kernel。此时你需要点击右上角的 kernel，手动选择到你想要的 kernel 即可，此时才会执行 `start_kernel_for_session()`，而上面我们定义的 `get_kernel_path()` 就是在这个函数中执行的。
 
 完美！
