@@ -27,7 +27,7 @@
 1. 你不能直接 `import utils`，因为该模块处于父级目录中，你不得不每次都写 `sys.path.insert`，一点都不优雅。
 2. 你写了 insert 后，utils 可以导入了，但是如果 utils 里的函数读取了 `data/` 下的文件，那么这就会导致失败。
 
-今天看了 real python的 [Python Project Structure: How to Choose the Right Layout](https://realpython.com/python-application-layouts/)，借此机会，和 ChatGPT 再次讨论这一问题。经过[几轮的 back and forth](https://chatgpt.com/share/6ad06d37-fc48-83ea-9ada-3d74b56ffd68)，最终得到下面的解决方案，只需一次改动，无需在每次新建 notebook 时手动写代码：
+今天看了 real python 的 [Python Project Structure: How to Choose the Right Layout](https://realpython.com/python-application-layouts/)，借此机会，和 ChatGPT 再次讨论这一问题。经过[几轮的 back and forth](https://chatgpt.com/share/6ad06d37-fc48-83ea-9ada-3d74b56ffd68)，最终得到下面的解决方案，只需一次改动，无需在每次新建 notebook 时手动写代码：
 
 在 Jupyter Server 的配置文件 `~/.jupyter/jupyter_server_config.py` 中添加：
 
