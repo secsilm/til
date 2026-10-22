@@ -34,7 +34,7 @@
 ## nicegui
 - [NiceGUI 报错 Invalid websocket upgrade](nicegui/invalid-websocket-upgrade.md) - 2025-12-10
 ## python
-- [为不同项目的 Notebook 自动设置工作目录](python/jupyter-notebook-custom-kernel-working-directory.md) - 2026-10-21，2026-10-15
+- [为不同项目的 Notebook 自动设置工作目录](python/jupyter-notebook-custom-kernel-working-directory.md) - 2026-10-22，2026-10-15
 - [pandas 3 的新变化](python/pandas-3.md) - 2026-02-12
 - [使用 `itertools.pairwise` 进行相邻元素对儿遍历](python/itertools-pairwise.md) - 2025-12-23
 - [使用 f-string 格式化日期时间](python/format-datetime-with-f-string.md) - 2025-12-18
